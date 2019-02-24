@@ -4,8 +4,10 @@
        <div class ="panel-body" >
          <div>
          <input [(ngModel)] = "filterBy" type="text" class = "form-control" placeholder="Filter Players" />
-         <div>
-           
+         <div class = "alert  alert-success" *ngIf = "filterBy">
+           List filtered using : {{filterBy}}
+         </div>
+         <div>           
          </div>  
           </div>
             <table *ngIf = "playerDetails && playerDetails.length" class="table table-bordered table-hover">
@@ -25,7 +27,7 @@
                       </button>
                     </th>
                 </tr>
-                <tr *ngFor = "let playerDetail of playerDetails" >
+                <tr *ngFor = "let playerDetail of playerDetails | searchPipe:filterBy" >
                   <td *ngIf="showHideDetails">{{playerDetail.playerId}}</td>
                   <td >{{playerDetail.playerNombres}}</td>                 
                   <td *ngIf="showHideDetails">{{playerDetail.playerAsistencia}}</td>

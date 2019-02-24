@@ -13,7 +13,7 @@ export class PlayerComponentComponent implements OnInit {
   constructor(private _playerInfoService : PlayerInfoService) { }
 
   playerDetails : any = [];
-  filterBy : string = "Hello";
+  filterBy : string ;
 
   ngOnInit() {
     this.playerDetails = this._playerInfoService.getplayerInfo();

@@ -9,6 +9,7 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { TrainingComponentComponent } from './components/training-component/training-component.component';
 import { PlayerComponentComponent } from './components/player-component/player-component.component';
 import { AnalysisComponentComponent } from './components/analysis-component/analysis-component.component';
+import { SearchPipePipe } from './Pipes/PlayerComponent/SearchPipe/search-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AnalysisComponentComponent } from './components/analysis-component/anal
     HomeComponentComponent,
     TrainingComponentComponent,
     PlayerComponentComponent,
-    AnalysisComponentComponent
+    AnalysisComponentComponent,
+    SearchPipePipe
   ],
   imports: [
     BrowserModule,
