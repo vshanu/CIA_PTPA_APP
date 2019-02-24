@@ -1,3 +1,43 @@
-<p>
-  player-component works!
-</p>
+<div class = "container">
+    <div class = "panel panel-primary">
+      <div class ="panel-heading">Team Training Details</div>
+       <div class ="panel-body" >
+         <div>
+         <input [(ngModel)] = "filterBy" type="text" class = "form-control" placeholder="Filter Players" />
+         <div>
+           
+         </div>  
+          </div>
+            <table *ngIf = "playerDetails && playerDetails.length" class="table table-bordered table-hover">
+                <tr>
+                  <th *ngIf="showHideDetails">ID</th>
+                  <th>NOMBRES</th>
+                  <th *ngIf="showHideDetails">ASISTENCIA</th>
+                  <th *ngIf="showHideDetails">CONDUCTA(1-10)</th>
+                  <th *ngIf="showHideDetails">RENDIMIENTO FISICO(1-10)</th>
+                  <th *ngIf="showHideDetails">VESTUARIO ADECUADO(1-10)</th>
+                  <th *ngIf="showHideDetails">RENDIMIENTO ACADEMICO(1-10)</th>
+                  <th *ngIf="showHideDetails">HORAS A MENTOREAR</th>
+                  <th *ngIf="showHideDetails">ASITIÓ LA LIGA</th>
+                  <th style = "width: 70px;">
+                      <button class = "btn btn-success" (click) = "showDetails()" style = "width: 50px;">
+                        {{showHideDetails ? 'Hide Details' : 'Show Details'}}
+                      </button>
+                    </th>
+                </tr>
+                <tr *ngFor = "let playerDetail of playerDetails" >
+                  <td *ngIf="showHideDetails">{{playerDetail.playerId}}</td>
+                  <td >{{playerDetail.playerNombres}}</td>                 
+                  <td *ngIf="showHideDetails">{{playerDetail.playerAsistencia}}</td>
+                  <td *ngIf="showHideDetails">{{playerDetail.playerConducto}}</td>
+                  <td *ngIf="showHideDetails">{{playerDetail.playerRendimientoFisico}}</td>
+                  <td *ngIf="showHideDetails">{{playerDetail.playerAdecuado}}</td>
+                  <td *ngIf="showHideDetails">{{playerDetail.playerRendimientoAcademico}}</td>
+                  <td *ngIf="showHideDetails">{{playerDetail.playerHorasAMentorear}}</td>
+                  <td *ngIf="showHideDetails">{{playerDetail.playerAsititoLaLiga}}</td>
+                  
+                </tr>
+              </table>
+      </div>
+    </div>
+    </div>

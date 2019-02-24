@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainingComponentComponent implements OnInit {
 
+  title = 'PTPA';
   constructor() { }
 
   ngOnInit() {
