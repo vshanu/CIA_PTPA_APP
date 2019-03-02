@@ -28,16 +28,34 @@
                     </th>
                 </tr>
                 <tr *ngFor = "let playerDetail of playerDetails | searchPipe:filterBy" >
-                  <td *ngIf="showHideDetails">{{playerDetail.playerId}}</td>
-                  <td >{{playerDetail.playerNombres}}</td>                 
-                  <td *ngIf="showHideDetails">{{playerDetail.playerAsistencia}}</td>
-                  <td *ngIf="showHideDetails">{{playerDetail.playerConducto}}</td>
-                  <td *ngIf="showHideDetails">{{playerDetail.playerRendimientoFisico}}</td>
-                  <td *ngIf="showHideDetails">{{playerDetail.playerAdecuado}}</td>
-                  <td *ngIf="showHideDetails">{{playerDetail.playerRendimientoAcademico}}</td>
-                  <td *ngIf="showHideDetails">{{playerDetail.playerHorasAMentorear}}</td>
-                  <td *ngIf="showHideDetails">{{playerDetail.playerAsititoLaLiga}}</td>
-                  
+                  <td *ngIf="showHideDetails">
+                    {{playerDetail.playerId}}                    
+                  </td>
+                  <td >
+                    {{playerDetail.playerNombres}}                    
+                  </td>                 
+                  <td *ngIf="showHideDetails">
+                    {{playerDetail.playerAsistencia}}                  
+                  </td>
+                  <td *ngIf="showHideDetails">
+                    {{playerDetail.playerConducto}}                  
+                  </td>
+                  <td *ngIf="showHideDetails">
+                    {{playerDetail.playerRendimientoFisico}}
+                    
+                  </td>
+                  <td *ngIf="showHideDetails">
+                    {{playerDetail.playerAdecuado}}                   
+                  </td>
+                  <td *ngIf="showHideDetails">
+                    {{playerDetail.playerRendimientoAcademico}}                   
+                  </td>
+                  <td *ngIf="showHideDetails">
+                    {{playerDetail.playerHorasAMentorear}}                  
+                  </td>
+                  <td *ngIf="showHideDetails"> 
+                    <app-ratings [rating]="playerDetail.playerAsititoLaLiga"></app-ratings>                 
+                  </td>                 
                 </tr>
               </table>
       </div>

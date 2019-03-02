@@ -16,7 +16,9 @@ export class PlayerComponentComponent implements OnInit {
   filterBy : string ;
 
   ngOnInit() {
-    this.playerDetails = this._playerInfoService.getplayerInfo();
+    this._playerInfoService.getplayerInfo().subscribe((data) => {
+      this.playerDetails = data;
+    });
   }
 
   showDetails(i){
