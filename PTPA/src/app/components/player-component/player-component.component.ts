@@ -24,4 +24,8 @@ export class PlayerComponentComponent implements OnInit {
   showDetails(i){
     this.showHideDetails = !this.showHideDetails;
   }
+
+  ratingFnParent(data:string){
+    console.log(data);
+  }
 }

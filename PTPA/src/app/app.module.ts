@@ -12,6 +12,8 @@ import { PlayerComponentComponent } from './components/player-component/player-c
 import { AnalysisComponentComponent } from './components/analysis-component/analysis-component.component';
 import { SearchPipePipe } from './Pipes/PlayerComponent/SearchPipe/search-pipe.pipe';
 import { RatingsComponent } from './components/player-component/ratings/ratings.component';
+import { RouterModule } from '@angular/router';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,21 @@ import { RatingsComponent } from './components/player-component/ratings/ratings.
     PlayerComponentComponent,
     AnalysisComponentComponent,
     SearchPipePipe,
-    RatingsComponent
+    RatingsComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RouterModule.forRoot([
+      {path:"player", component:PlayerComponentComponent},
+      {path:"home", component:HomeComponentComponent},
+      {path:"training", component:PlayerComponentComponent},
+      {path:"analysis", component:PlayerComponentComponent},
+      {path:"", redirectTo:"home", pathMatch:"full"},
+      {path:"**", redirectTo:"home"},
+    ]),
     HttpClientModule
   ],
   providers: [],

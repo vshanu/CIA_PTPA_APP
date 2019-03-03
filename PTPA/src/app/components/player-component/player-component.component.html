@@ -1,4 +1,4 @@
-<div class = "container">
+
     <div class = "panel panel-primary">
       <div class ="panel-heading">Team Training Details</div>
        <div class ="panel-body" >
@@ -54,10 +54,9 @@
                     {{playerDetail.playerHorasAMentorear}}                  
                   </td>
                   <td *ngIf="showHideDetails"> 
-                    <app-ratings [rating]="playerDetail.playerAsititoLaLiga"></app-ratings>                 
+                    <app-ratings [rating]="playerDetail.playerAsititoLaLiga" (ratingToParent)="ratingFnParent($event)"></app-ratings>                 
                   </td>                 
                 </tr>
               </table>
       </div>
-    </div>
     </div>
