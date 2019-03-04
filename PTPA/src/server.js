@@ -4,7 +4,7 @@ var express = require('express'),
 
 
 app.use(cors({
-    origin: 'http://localhost:4200s'
+    origin: 'http://localhost:4200'
 }));
 
 app.get('/playerinfo', function(req, res){
@@ -18,7 +18,7 @@ app.get('/playerinfo', function(req, res){
             "playerAdecuado": "5",
             "playerRendimientoAcademico": "5",
             "playerHorasAMentorear": "5",
-            "playerAsititoLaLiga": "1"
+            "playerAsititoLaLiga": "4"
         },
         {
            "playerId": 2,
@@ -29,7 +29,7 @@ app.get('/playerinfo', function(req, res){
             "playerAdecuado": "5",
             "playerRendimientoAcademico": "5",
             "playerHorasAMentorear": "5",
-            "playerAsititoLaLiga": "1"
+            "playerAsititoLaLiga": "3"
         },
         {
            "playerId": 3,
@@ -51,7 +51,7 @@ app.get('/playerinfo', function(req, res){
             "playerAdecuado": "5",
             "playerRendimientoAcademico": "5",
             "playerHorasAMentorear": "8",
-            "playerAsititoLaLiga": "1"
+            "playerAsititoLaLiga": "2"
         },
         {
             "playerId": 5,
@@ -62,7 +62,7 @@ app.get('/playerinfo', function(req, res){
             "playerAdecuado": "3",
             "playerRendimientoAcademico": "5",
             "playerHorasAMentorear": "5",
-            "playerAsititoLaLiga": "1"
+            "playerAsititoLaLiga": "5"
         }
     ]);
 })
