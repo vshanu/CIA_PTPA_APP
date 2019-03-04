@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../Services/LoginAuth/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+
+  toggleLinks : Boolean = false;
+
+  constructor(private _authservice : AuthService) { }
 
   ngOnInit() {
+    this._authservice.$authObservable.subscribe((data) => {
+    this.toggleLinks = data;
+    });
   }
 
+  logout(){
+    this._authservice.logout();
+
+  }
 }

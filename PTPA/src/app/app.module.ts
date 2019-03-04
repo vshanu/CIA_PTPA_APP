@@ -14,6 +14,9 @@ import { SearchPipePipe } from './Pipes/PlayerComponent/SearchPipe/search-pipe.p
 import { RatingsComponent } from './components/player-component/ratings/ratings.component';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { AuthService } from './Services/LoginAuth/auth.service';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthGuard } from './Services/LoginAuth/auth.guard'
 
 @NgModule({
   declarations: [
@@ -32,16 +35,17 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([
-      {path:"player", component:PlayerComponentComponent},
-      {path:"home", component:HomeComponentComponent},
-      {path:"training", component:PlayerComponentComponent},
-      {path:"analysis", component:PlayerComponentComponent},
+      {path:"player", component:PlayerComponentComponent, canActivate: [AuthGuard]},
+      {path:"home", component:HomeComponentComponent, canActivate: [AuthGuard]},
+      {path:"training", component:TrainingComponentComponent, canActivate: [AuthGuard]},
+      {path:"analysis", component:AnalysisComponentComponent, canActivate: [AuthGuard]},
+      {path:"login", component:LoginComponentComponent},
       {path:"", redirectTo:"home", pathMatch:"full"},
       {path:"**", redirectTo:"home"},
     ]),
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, CookieService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

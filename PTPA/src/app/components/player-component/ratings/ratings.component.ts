@@ -7,16 +7,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class RatingsComponent implements OnInit {
 
-  @Input() rating : number;
+  @Input() rating_playerAsititoLaLiga : number;
   @Output() ratingToParent : EventEmitter<string> = new EventEmitter();
-  rating_arr : any = [];
-  constructor() { }
+  rating_arr_playerAsititoLaLiga : any = [];
+  constructor() {}
 
   ngOnInit() {
-    this.rating_arr = Array(Math.round(this.rating)).fill(Math.round(this.rating));
-  }
-
-  sendRatingtoParent(){
-    this.ratingToParent.emit('Rating Value  = '+ this.rating);
+    this.rating_arr_playerAsititoLaLiga = Array(Math.round(this.rating_playerAsititoLaLiga)).fill(Math.round(this.rating_playerAsititoLaLiga));
   }
 }

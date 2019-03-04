@@ -1,11 +1,28 @@
 var express = require('express'),
     app = express(),
-    cors = require('cors');
+    cors = require('cors'),
+    bodyParser = require('body-parser');
 
 
 app.use(cors({
     origin: 'http://localhost:4200'
 }));
+
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+
+app.post('/authenticate', function(req, res)
+{
+    if(req.body.username && req.body.password){
+        res.send({
+            isLoggedIn: true
+        });
+    } else {
+        res.send({
+            isLoggedIn: false
+        });
+    }
+});
 
 app.get('/playerinfo', function(req, res){
     res.send([
@@ -50,7 +67,7 @@ app.get('/playerinfo', function(req, res){
             "playerRendimientoFisico": "5",
             "playerAdecuado": "5",
             "playerRendimientoAcademico": "5",
-            "playerHorasAMentorear": "8",
+            "playerHorasAMentorear": "5",
             "playerAsititoLaLiga": "2"
         },
         {
