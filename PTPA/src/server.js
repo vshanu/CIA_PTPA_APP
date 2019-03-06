@@ -1,7 +1,8 @@
 var express = require('express'),
     app = express(),
     cors = require('cors'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    jwt = require('jsonwebtoken');
 
 
 app.use(cors({
@@ -13,9 +14,13 @@ app.use(bodyParser.json());
 
 app.post('/authenticate', function(req, res)
 {
+    var token =jwt.sign({'uname' : req.body.username}, 'championsinaction-secret-key', {
+        expiresIn : '1h'
+    });
     if(req.body.username && req.body.password){
         res.send({
-            isLoggedIn: true
+            isLoggedIn: true,
+            token : token
         });
     } else {
         res.send({
@@ -24,6 +29,22 @@ app.post('/authenticate', function(req, res)
     }
 });
 
+
+app.use(function(req, res, next){
+    var token = req.body.authtoken || req.query.authtoken || req.headers['authtoken']
+    jwt.verify(token, 'championsinaction-secret-key', function(err, decoded){
+            if(err){
+                res.send({
+                   err : true,
+                   msg : 'Invalid Request'      
+                });
+
+            } else {
+                req.decoded = decoded;
+                next();
+            }
+    });
+});
 app.get('/playerinfo', function(req, res){
     res.send([
         {

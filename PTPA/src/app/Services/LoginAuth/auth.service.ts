@@ -18,8 +18,8 @@ export class AuthService {
 
     this._http.post('http://localhost:3000/authenticate', auth_details).subscribe((data : any) => {
       if(data.isLoggedIn){
-        this._cookieService.set('CIA_AccessModifier', data.isLoggedIn);
-        this.$authObservable.next(data.isLoggedIn);
+        this._cookieService.set('CIA_AccessModifier', data.token);
+        this.$authObservable.next(data.token);
         this._router.navigate(['/home']);
       } else {
         alert('Invalid Credentials!!!')
