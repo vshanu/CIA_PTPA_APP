@@ -1,22 +1,74 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#" [routerLink] = "['/home']" >Brand</a>
-      </div>
-  
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#" [routerLink] = "['/home']" *ngIf = "toggleLinks">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="#" [routerLink] = "['/training']" *ngIf = "toggleLinks">Training</a></li>
-          <li><a href="#" [routerLink] = "['/player']" *ngIf = "toggleLinks">Player</a></li>
-          <li><a href="#" [routerLink] = "['/analysis']" *ngIf = "toggleLinks">Analysis</a></li>
-        </ul>
-        
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" (click) = "logout()" *ngIf = "toggleLinks">Logout</a></li>          
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Navigation</title>
+    <meta charset="UTF-8">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <!--===============================================================================================-->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ <!--===============================================================================================-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="../../../assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="../../../assets/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+
+</head>
+<body>
+<nav *ngIf = "toggleLinks" class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" [routerLink] = "['/home']">
+        <img  height="42" width="70" src="../../../assets/Images/logo-wp.png" alt="">
+      </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <a class="nav-link" href="#" [routerLink] = "['/home']" *ngIf = "toggleLinks">
+          <i class="fa fa-home"></i>
+          Home
+          <span class="sr-only">(current)</span>
+          </a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link" href="#" [routerLink] = "['/training']" *ngIf = "toggleLinks">
+            <i class="fa fa-futbol-o"></i>
+            Training
+            <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#" [routerLink] = "['/player']" *ngIf = "toggleLinks">
+              <i class="fa fa-user"></i>
+              Player
+              <span class="sr-only">(current)</span>
+              </a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="#" [routerLink] = "['/analysis']" *ngIf = "toggleLinks">
+                <i class="fa fa-area-chart"></i>
+                Analysis
+                <span class="sr-only">(current)</span>
+                </a>
+            </li>
+    </ul>   
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" a href="#" (click) = "logout()" *ngIf = "toggleLinks">
+                <i class="fa fa-home"></i>
+                Logout
+                <span class="sr-only">(current)</span>
+                </a>
+        </li>
+      </ul>
+  </div>
+</nav>
+</body>
