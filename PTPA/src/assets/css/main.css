@@ -164,7 +164,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  
   background-repeat: no-repeat;
   background-size: 1400px 700px;
   background-position: center;
@@ -224,8 +224,7 @@ iframe {
 /*---------------------------------------------*/
 .login100-form-avatar {
   width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  height: 100px;
   overflow: hidden;
   margin:  auto;
 }
