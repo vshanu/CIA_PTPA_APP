@@ -12,13 +12,14 @@ export class PlayerComponentComponent implements OnInit {
   showHideDetails : boolean = false; 
   constructor(private _playerInfoService : PlayerInfoService) { }
 
-  playerDetails : any = [];
+  playerDetails_week1 : any = [];
   filterBy : string ;
 
   ngOnInit() {
     this._playerInfoService.getplayerInfo().subscribe((data) => {
-      this.playerDetails = data;
+      this.playerDetails_week1 = data;
     });
+
   }
 
   showDetails(i){

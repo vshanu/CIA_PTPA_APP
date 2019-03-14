@@ -19,7 +19,7 @@
          </div>  
           </div>
           <br>
-            <table *ngIf = "playerDetails && playerDetails.length" class="table table-bordered table-striped">
+            <table *ngIf = "playerDetails_week1 && playerDetails_week1.length" class="table table-bordered table-striped">
                 <thead class="thead-dark">
                 <tr>
                   <th *ngIf="showHideDetails">ID</th>
@@ -34,35 +34,35 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor = "let playerDetail of playerDetails | searchPipe:filterBy" >
+                <tr *ngFor = "let playerDetail_week1 of playerDetails_week1 | searchPipe:filterBy" >
                   <td *ngIf="showHideDetails">
-                    {{playerDetail.playerId}}                    
+                    {{playerDetail_week1.playerId}}                    
                   </td>
                   <td >
-                    {{playerDetail.playerNombres}}                    
+                    {{playerDetail_week1.playerNombres}}                    
                   </td>                 
                   <td *ngIf="showHideDetails">
-                    {{playerDetail.playerAsistencia}}                  
+                    {{playerDetail_week1.playerAsistencia}}                  
                   </td>
                   <td *ngIf="showHideDetails">
-                    {{playerDetail.playerConducto}}                  
+                    {{playerDetail_week1.playerConducto}}                  
                   </td>
                   <td *ngIf="showHideDetails">
-                    {{playerDetail.playerRendimientoFisico}}
+                    {{playerDetail_week1.playerRendimientoFisico}}
                     
                   </td>
                   <td *ngIf="showHideDetails">
-                    {{playerDetail.playerAdecuado}}                   
+                    {{playerDetail_week1.playerAdecuado}}                   
                   </td>
                   <td *ngIf="showHideDetails">
-                    {{playerDetail.playerRendimientoAcademico}}                   
+                    {{playerDetail_week1.playerRendimientoAcademico}}                   
                   </td>
                   <td *ngIf="showHideDetails">  
-                    {{playerDetail.playerHorasAMentorear}} 
+                    {{playerDetail_week1.playerHorasAMentorear}} 
                                                                         
                   </td>
                   <td *ngIf="showHideDetails"> 
-                    <app-ratings [rating_playerAsititoLaLiga]="playerDetail.playerAsititoLaLiga"></app-ratings>                 
+                    <app-ratings [rating_playerAsititoLaLiga]="playerDetail_week1.playerAsititoLaLiga"></app-ratings>                 
                   </td>                 
                 </tr>
               </tbody>
@@ -75,7 +75,7 @@
                     </div>  
                      </div>
                      <br>
-                     <table *ngIf = "playerDetails && playerDetails.length" class="table table-bordered table-striped">
+                     <table *ngIf = "playerDetails_week1 && playerDetails_week1.length" class="table table-bordered table-striped">
                         <thead class="thead-dark">
                         <tr>
                           <th *ngIf="showHideDetails">ID</th>
@@ -90,35 +90,35 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor = "let playerDetail of playerDetails | searchPipe:filterBy" >
+                        <tr *ngFor = "let playerDetail_week1 of playerDetails_week1 | searchPipe:filterBy" >
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerId}}                    
+                            {{playerDetail_week1.playerId}}                    
                           </td>
                           <td >
-                            {{playerDetail.playerNombres}}                    
+                            {{playerDetail_week1.playerNombres}}                    
                           </td>                 
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerAsistencia}}                  
+                            {{playerDetail_week1.playerAsistencia}}                  
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerConducto}}                  
+                            {{playerDetail_week1.playerConducto}}                  
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerRendimientoFisico}}
+                            {{playerDetail_week1.playerRendimientoFisico}}
                             
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerAdecuado}}                   
+                            {{playerDetail_week1.playerAdecuado}}                   
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerRendimientoAcademico}}                   
+                            {{playerDetail_week1.playerRendimientoAcademico}}                   
                           </td>
                           <td *ngIf="showHideDetails">  
-                            {{playerDetail.playerHorasAMentorear}} 
+                            {{playerDetail_week1.playerHorasAMentorear}} 
                                                                                 
                           </td>
                           <td *ngIf="showHideDetails"> 
-                            <app-ratings [rating_playerAsititoLaLiga]="playerDetail.playerAsititoLaLiga"></app-ratings>                 
+                            <app-ratings [rating_playerAsititoLaLiga]="playerDetail_week1.playerAsititoLaLiga"></app-ratings>                 
                           </td>                 
                         </tr>
                       </tbody>
@@ -131,7 +131,7 @@
                     </div>  
                      </div>
                      <br>
-                     <table *ngIf = "playerDetails && playerDetails.length" class="table table-bordered table-striped">
+                     <table *ngIf = "playerDetails_week1 && playerDetails_week1.length" class="table table-bordered table-striped">
                         <thead class="thead-dark">
                         <tr>
                           <th *ngIf="showHideDetails">ID</th>
@@ -146,35 +146,35 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor = "let playerDetail of playerDetails | searchPipe:filterBy" >
+                        <tr *ngFor = "let playerDetail_week1 of playerDetails_week1 | searchPipe:filterBy" >
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerId}}                    
+                            {{playerDetail_week1.playerId}}                    
                           </td>
                           <td >
-                            {{playerDetail.playerNombres}}                    
+                            {{playerDetail_week1.playerNombres}}                    
                           </td>                 
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerAsistencia}}                  
+                            {{playerDetail_week1.playerAsistencia}}                  
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerConducto}}                  
+                            {{playerDetail_week1.playerConducto}}                  
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerRendimientoFisico}}
+                            {{playerDetail_week1.playerRendimientoFisico}}
                             
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerAdecuado}}                   
+                            {{playerDetail_week1.playerAdecuado}}                   
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerRendimientoAcademico}}                   
+                            {{playerDetail_week1.playerRendimientoAcademico}}                   
                           </td>
                           <td *ngIf="showHideDetails">  
-                            {{playerDetail.playerHorasAMentorear}} 
+                            {{playerDetail_week1.playerHorasAMentorear}} 
                                                                                 
                           </td>
                           <td *ngIf="showHideDetails"> 
-                            <app-ratings [rating_playerAsititoLaLiga]="playerDetail.playerAsititoLaLiga"></app-ratings>                 
+                            <app-ratings [rating_playerAsititoLaLiga]="playerDetail_week1.playerAsititoLaLiga"></app-ratings>                 
                           </td>                 
                         </tr>
                       </tbody>
@@ -187,7 +187,7 @@
                     </div>  
                      </div>
                      <br>
-                     <table *ngIf = "playerDetails && playerDetails.length" class="table table-bordered table-striped">
+                     <table *ngIf = "playerDetails_week1 && playerDetails_week1.length" class="table table-bordered table-striped">
                         <thead class="thead-dark">
                         <tr>
                           <th *ngIf="showHideDetails">ID</th>
@@ -202,35 +202,35 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor = "let playerDetail of playerDetails | searchPipe:filterBy" >
+                        <tr *ngFor = "let playerDetail_week1 of playerDetails_week1 | searchPipe:filterBy" >
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerId}}                    
+                            {{playerDetail_week1.playerId}}                    
                           </td>
                           <td >
-                            {{playerDetail.playerNombres}}                    
+                            {{playerDetail_week1.playerNombres}}                    
                           </td>                 
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerAsistencia}}                  
+                            {{playerDetail_week1.playerAsistencia}}                  
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerConducto}}                  
+                            {{playerDetail_week1.playerConducto}}                  
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerRendimientoFisico}}
+                            {{playerDetail_week1.playerRendimientoFisico}}
                             
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerAdecuado}}                   
+                            {{playerDetail_week1.playerAdecuado}}                   
                           </td>
                           <td *ngIf="showHideDetails">
-                            {{playerDetail.playerRendimientoAcademico}}                   
+                            {{playerDetail_week1.playerRendimientoAcademico}}                   
                           </td>
                           <td *ngIf="showHideDetails">  
-                            {{playerDetail.playerHorasAMentorear}} 
+                            {{playerDetail_week1.playerHorasAMentorear}} 
                                                                                 
                           </td>
                           <td *ngIf="showHideDetails"> 
-                            <app-ratings [rating_playerAsititoLaLiga]="playerDetail.playerAsititoLaLiga"></app-ratings>                 
+                            <app-ratings [rating_playerAsititoLaLiga]="playerDetail_week1.playerAsititoLaLiga"></app-ratings>                 
                           </td>                 
                         </tr>
                       </tbody>
