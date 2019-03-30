@@ -3,6 +3,10 @@ var express = require('express'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
     jwt = require('jsonwebtoken');
+    mongodb = require('mongodb').MongoClient;
+const mongo_conn = 'mongodb://localhost/';
+var db = '';
+
 
 
 app.use(cors({
@@ -103,10 +107,25 @@ app.get('/playerinfo', function(req, res){
             "playerAsititoLaLiga": "5"
         }
     ]);
-})
+});
 
-app.listen(3000, function(){
+app.get('/', function(req,res){
+    db.collection('PlayerData').find({}).toArray(function(err,docs){
+        res.send(docs);
+    })
+    });
 
-    console.log('Server running @ localhost:3000');
-    
-})
+
+
+mongodb.connect(mongo_conn,{ useNewUrlParser: true },function(err, client){
+    if(!err){
+        console.log('Connection established!!!');
+        app.listen(3000, function(){
+            console.log('Server running @ localhost:3000');           
+        });
+        db = client.db('CIA_PTPA_DB');
+    }
+    else{
+    console.log(err);
+    }
+});
