@@ -4,7 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     jwt = require('jsonwebtoken');
     mongodb = require('mongodb').MongoClient;
-const mongo_conn = 'mongodb://localhost/';
+var url = 'mongodb://localhost:27017/';
 var db = '';
 
 
@@ -49,6 +49,14 @@ app.use(function(req, res, next){
             }
     });
 });
+app.get('/', function(req, res){
+    // dbo.collection("Mentors").find({}).toArray(function(err,result){
+      //   if (err) throw err;
+        // res.send(result);
+        res.send("Valid Request!!")
+     });
+
+
 app.get('/playerinfo', function(req, res){
     res.send([
         {
@@ -109,23 +117,22 @@ app.get('/playerinfo', function(req, res){
     ]);
 });
 
-app.get('/', function(req,res){
-    db.collection('PlayerData').find({}).toArray(function(err,docs){
-        res.send(docs);
-    })
-    });
 
 
 
-mongodb.connect(mongo_conn,{ useNewUrlParser: true },function(err, client){
-    if(!err){
-        console.log('Connection established!!!');
-        app.listen(3000, function(){
-            console.log('Server running @ localhost:3000');           
-        });
-        db = client.db('CIA_PTPA_DB');
-    }
-    else{
-    console.log(err);
-    }
+app.listen(3000, function(){
+
+    console.log('Server running @ localhost:3000');
+    
 });
+
+mongodb.connect(url,{ useNewUrlParser: true },function(err, db){
+    if(err) throw err;
+    console.log('Connection Established!!!');
+    var dbo = db.db("CIA_PTPA_DB");
+    var query = { UserName: "admin" };
+    dbo.collection("Login").find(query).toArray(function(err,result){
+        if (err) throw err;
+        console.log(result);
+    });
+})
